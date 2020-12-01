@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const criarChave = async () => {
-    const newKey =  await createMasterKey(value);
+    const newKey =  await createMasterKey(value, setAlert, setAlertMessage);
     setLocalKey(newKey); 
     setMKey(newKey);
     setValue('');
