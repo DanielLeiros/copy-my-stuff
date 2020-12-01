@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {copyFromButton} from './core';
 
 export const getDataByMasterKey = (key) => {
     return axios.get(`https://control-c-project.herokuapp.com/control-c-project/paste-master-key/${key}`)
@@ -81,6 +82,7 @@ export const paste = (key, setAlert, setAlertMessage) => {
     .then(response =>{
         setAlertMessage(`${response.data}`);
         setAlert("copia");
+        copyFromButton(response.data);
     }).catch(saida => {
         alertError(setAlert, setAlertMessage);
         console.error("Falha ao realizar a requisição");

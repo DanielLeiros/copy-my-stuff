@@ -48,10 +48,10 @@ function App() {
 
   return (
     <div id="app" className="relative bg-gray-300 p-5">
-      <MasterKey mKey={mKey}/>
+      <MasterKey mKey={mKey} />
       <img src={logo} width="80" alt="copy_my_stuff"/>    
       <div id="inputs" className="mt-5">
-        <Alerts tipo={alert} msg={alertMessage} />
+        <Alerts tipo={alert} msg={alertMessage} setAlert={setAlert}/>
         <input 
           type="search" 
           name="serch" 
@@ -61,11 +61,11 @@ function App() {
           onChange={(e) => setValue(e.target.value)}
         />
         <div className="btn-g">
-          <Button msg="Único uso" func={makeLimitedCopy} value={value} />
+          <Button msg="Único uso" func={makeLimitedCopy} value={value} tipo="copia"/>
+          <Button msg="Resgatar cópia" func={getPaste} value={value} tipo="copia" />
           <Button msg="Guardar" func={guardar} value={value} />
-          <Button msg="Resgatar cópia" func={getPaste} value={value} />
           <Button msg="Criar chave" func={criarChave} value={value} />
-          <Button msg="Resgatar chave" func={getByMasterKey} value={value} />
+          <Button msg="Trocar chave" func={getByMasterKey} value={value} />
         </div>
       </div>
       <div className="mt-20 cards">

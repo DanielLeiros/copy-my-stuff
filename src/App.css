@@ -51,3 +51,13 @@
   text-align: center;
   height: 40px;
 }
+
+.copy-icon {
+  width: 13px;
+  position: fixed;
+  right: 10px;
+}
+
+.card-text {
+  padding-right: 25px;
+}

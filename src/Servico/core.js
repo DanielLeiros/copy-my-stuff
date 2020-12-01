@@ -50,3 +50,15 @@ export const copy = (index) => {
       alert(`O texto: ${copyText.value} foi copiado!`)
     }
   }
+
+  export const copyFromButton = (value) => {
+    if(value){
+      var textField = document.createElement('textarea')
+      textField.innerText = value
+      document.body.appendChild(textField)
+      textField.select()
+      document.execCommand('copy')
+      textField.remove()
+      alert(`O texto: ${value} foi copiado!`)
+    }
+  }
