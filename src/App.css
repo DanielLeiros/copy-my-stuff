@@ -1,0 +1,53 @@
+/* ./your-css-folder/styles.css */
+@import url(https://unpkg.com/pattern.css);
+
+.btn-g {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  min-height: 600px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#inputs {
+  display: grid;
+  grid-template-columns: 60%;
+  -ms-grid-column-span: 10px;
+  justify-content: center;
+}
+
+.key-input {
+  position: fixed;
+  right: 50px;
+  top: 20px;
+  font-size: 12px;
+}
+
+.b-border {
+  border-bottom: 1px solid black;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.rodape {
+  font-size: 10px;
+  color: black;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: darkgrey;
+  text-align: center;
+  height: 40px;
+}
