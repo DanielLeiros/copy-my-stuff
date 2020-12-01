@@ -5,7 +5,7 @@ export const getDataByMasterKey = (key) => {
     .then(response =>{
         return response;
     }).catch(saida => {
-        console.log(saida)
+        console.error(saida)
         console.error("Falha ao realizar a requisição");
     })
 }
@@ -22,12 +22,22 @@ export const getDataByMasterKeyDirect = (key, setAlert, setAlertMessage) => {
     })
 }
 
+export const createAutoMasterKey = (name) => {
+    const date = new Date().toString();
+    return axios.post(`https://control-c-project.herokuapp.com/control-c-project/create-master-key/${date}`)
+    .then(response =>{
+        return response.data;
+    }).catch(saida => {
+        console.error("Falha ao realizar a requisição");
+    })
+}
+
 export const createMasterKey = (name, setAlert, setAlertMessage) => {
     return axios.post(`https://control-c-project.herokuapp.com/control-c-project/create-master-key/${name}`)
     .then(response =>{
         return response.data;
     }).catch(saida => {
-        alertError(setAlert, setAlertMessage);
+        alertError(setAlert, setAlertMessage, "Não foi possível criar a chave");
         console.error("Falha ao realizar a requisição");
     })
 }
@@ -57,7 +67,6 @@ export const copyLimited = (value, setAlert, setAlertMessage) => {
 }
 
 export const copy = (value, setAlert, setAlertMessage) => {
-    console.log(value)
     return axios.post(`https://control-c-project.herokuapp.com/control-c-project/copy/${value}`)
     .then(response =>{
         return response;
@@ -78,7 +87,7 @@ export const paste = (key, setAlert, setAlertMessage) => {
     })
 }
 
-const alertError = (setAlert, setAlertMessage) =>{
-    setAlertMessage(`Este item não existe :/`);
+const alertError = (setAlert, setAlertMessage, customMsg) =>{
+    setAlertMessage(customMsg || `Este item não existe :/`);
     setAlert("erro");
 }

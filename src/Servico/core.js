@@ -1,5 +1,5 @@
 import Card from "../Components/Card.jsx";
-import { getDataByMasterKey } from './servico';
+import { getDataByMasterKey,createAutoMasterKey } from './servico';
 
 export async function getLocalKey (setMasterData, setMKey) {
     const key = localStorage.getItem("master-key");
@@ -12,7 +12,11 @@ export async function getLocalKey (setMasterData, setMKey) {
         }else {
             console.error("Deu errado")
         }
-    } 
+    } else {
+        const newKey = await createAutoMasterKey();
+        setMKey(newKey);
+        setLocalKey(newKey);
+    }
 }
 
 export const getLocalKeyData = async (setMasterData, key) => {
