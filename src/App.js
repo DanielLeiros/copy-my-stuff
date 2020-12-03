@@ -49,6 +49,8 @@ function App() {
 
   const getByMasterKey = () => {
     getDataByMasterKeyDirect(value, setAlert, setAlertMessage);
+    setLocalKey(value);
+    document.location.reload(); 
   }
 
   return (
