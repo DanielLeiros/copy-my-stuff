@@ -76,6 +76,12 @@
     font-size: 11px;
     margin-top: 20px;
   }
+
+  .cards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  
 }
 
 /*Scroll bar */
