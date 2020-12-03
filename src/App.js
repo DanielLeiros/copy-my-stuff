@@ -21,12 +21,17 @@ function App() {
     getLocalKey(setMasterData, setMKey);
   }, []);
 
+  useEffect(()=>{
+    setTimeout(() => {setAlert(''); setAlertMessage('')}, 5000);
+  }, [alert]);
+
   const criarChave = async () => {
-    const newKey =  await createMasterKey(value, setAlert, setAlertMessage);
+    const newKey =  await createMasterKey(value || new Date(), setAlert, setAlertMessage);
     getLocalKeyData(setMasterData, mKey);
     setLocalKey(newKey); 
     setMKey(newKey);
     setValue('');
+    document.location.reload(); 
   } 
 
   const guardar = async () => {
@@ -69,7 +74,7 @@ function App() {
         </div>
       </div>
       <div className="mt-20 cards">
-        {copiesLoader(masterData)}
+        {copiesLoader(masterData, setAlert, setAlertMessage)}
       </div>
       <div className="rodape">
       ® Esse é um aplicativo para realizar cópias e guardar informações em hash. Por: @andrefilho99 e @danielleiros

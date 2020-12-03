@@ -9,7 +9,7 @@
 
 #app {
   width: 100%;
-  min-height: 600px;
+  min-height: 700px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,4 +60,43 @@
 
 .card-text {
   padding-right: 25px;
+}
+
+.master-key {
+  background: rgba(209,213,219,var(--tw-bg-opacity));
+}
+
+@media screen and (max-width: 992px) {
+  .btn-g {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .btn-responsivo {
+    font-size: 11px;
+    margin-top: 20px;
+  }
+}
+
+/*Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: cornflowerblue; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: cornflowerblue; 
 }

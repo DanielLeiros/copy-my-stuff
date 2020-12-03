@@ -4,7 +4,7 @@ import React from 'react';
 export default function MasterKey({mKey}) {
   return (
         <div>
-            <div className="key-input">
+            <div className="master-key key-input">
                 <label>Chave ativa:</label>
                 <output 
                 name="personal-key" 

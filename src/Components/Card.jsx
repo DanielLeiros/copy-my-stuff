@@ -1,11 +1,11 @@
 import React from 'react';
 import {copy} from '../Servico/core.js'
 
-export default function Card({text, index}) {
+export default function Card({text, index, setAlert, setAlertMessage}) {
   return (
     <div 
         className="cursor-pointer p-10 break-all"
-        onClick={() => copy(index)}  
+        onClick={() => copy(index, setAlert, setAlertMessage)}  
       >
       <div className="pattern-dots-md gray-light">
         <div className="rounded bg-gray-800 p-4 transform translate-x-6 -translate-y-6 ">

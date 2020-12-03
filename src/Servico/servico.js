@@ -58,8 +58,9 @@ export const copyToKey = (key, value, setAlert, setAlertMessage) => {
 export const copyLimited = (value, setAlert, setAlertMessage) => {
     return axios.post(`https://control-c-project.herokuapp.com/control-c-project/copy-limited/${value}`)
     .then(response =>{
-        setAlertMessage(`"${value}" copiado de forma limitada em ${response.data}`);
+        setAlertMessage(`"${value}" foi registrado e o código ${response.data} copiado para transferência `);
         setAlert("sucesso");
+        copyFromButton(response.data);
         return response;
     }).catch(saida => {
         alertError(setAlert, setAlertMessage);
@@ -80,7 +81,7 @@ export const copy = (value, setAlert, setAlertMessage) => {
 export const paste = (key, setAlert, setAlertMessage) => {
     return axios.get(`https://control-c-project.herokuapp.com/control-c-project/paste/${key}`)
     .then(response =>{
-        setAlertMessage(`${response.data}`);
+        setAlertMessage(`${response.data} copiado para transferência`);
         setAlert("copia");
         copyFromButton(response.data);
     }).catch(saida => {
