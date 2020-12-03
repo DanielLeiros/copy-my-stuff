@@ -47,8 +47,8 @@ function App() {
     copyLimited(value, setAlert, setAlertMessage )
   }
 
-  const getByMasterKey = () => {
-    const keyExist = getDataByMasterKeyDirect(value, setAlert, setAlertMessage);
+  const getByMasterKey = async () => {
+    const keyExist = await getDataByMasterKeyDirect(value, setAlert, setAlertMessage);
     if(keyExist) {
       setLocalKey(value);
       document.location.reload(); 

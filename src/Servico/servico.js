@@ -20,6 +20,7 @@ export const getDataByMasterKeyDirect = (key, setAlert, setAlertMessage) => {
     }).catch(saida => {
         alertError(setAlert, setAlertMessage);
         console.error("Falha ao realizar a requisição");
+        return false;
     })
 }
 
