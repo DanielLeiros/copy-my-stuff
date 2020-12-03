@@ -16,7 +16,7 @@ export const getDataByMasterKeyDirect = (key, setAlert, setAlertMessage) => {
     .then(response =>{
         setAlertMessage(`Chave ${key}`);
         setAlert("sucesso");
-        return response;
+        return true;
     }).catch(saida => {
         alertError(setAlert, setAlertMessage);
         console.error("Falha ao realizar a requisição");

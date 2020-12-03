@@ -48,9 +48,11 @@ function App() {
   }
 
   const getByMasterKey = () => {
-    getDataByMasterKeyDirect(value, setAlert, setAlertMessage);
-    setLocalKey(value);
-    document.location.reload(); 
+    const keyExist = getDataByMasterKeyDirect(value, setAlert, setAlertMessage);
+    if(keyExist) {
+      setLocalKey(value);
+      document.location.reload(); 
+    }
   }
 
   return (
